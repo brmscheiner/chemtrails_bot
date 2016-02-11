@@ -32,13 +32,28 @@ def gen3(crime,enemy,lair,motive,hashtag):
 			+motive+'. NSA is reading this')
 	return tweet
 	
+def gen4(crime,enemy,lair,motive,hashtag):
+	tweet = (enemy.capitalize()
+			+" is taking over before our eyes. THEY "
+			+crime+'. '+hashtag)
+	return tweet
+
+def gen5(crime,enemy,lair,motive,hashtag):
+	tweet = ('Fight the system! '+hashtag)
+	return tweet
+	
+def gen6(crime,enemy,lair,motive,hashtag):
+	tweet = (enemy.capitalize()+' is the antichrist! '
+			 +"Don't let them "+motive+"! "+hashtag)
+	return tweet
+
 def buildTweet():
 	crime   = getRandomLine('crimes.txt')
 	enemy   = getRandomLine('enemies.txt')
 	lair    = getRandomLine('lairs.txt')
 	motive  = getRandomLine('motives.txt')
 	hashtag = getRandomLine('hashtags.txt')
-	numGenerators = 3
+	numGenerators = 6
 	n = str(random.randint(0,numGenerators))
 	tweet = eval('gen'+n+'(crime,enemy,lair,motive,hashtag)')
 	if len(tweet)>140:
