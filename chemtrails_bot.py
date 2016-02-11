@@ -1,10 +1,7 @@
-import tweepy,random
+import tweepy,random,api_keys
 
 def twitterSetup():
-	CONSUMER_KEY = 'o0Oc0TvzKAlj6hvYm6XUGyHav'
-	CONSUMER_SECRET = 'BWW6mJAvEhFp7ll9F7dh4IertSnrKL19bgy9tulqv8Ve0SLycB'
-	ACCESS_KEY = '4895807987-7CKsiUe4ixhKqN7StGpUMOCnnJeNTbOgWZOyHRp'
-	ACCESS_SECRET = 'b64AwjdNqKvUVlO4IUAsjgAUAt2JJMpY9k0npLmpGTHDw'
+	CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY,ACCESS_SECRET = api_keys.getKeys()
 	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 	auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 	api = tweepy.API(auth)
