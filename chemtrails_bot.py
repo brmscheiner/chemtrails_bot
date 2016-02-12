@@ -63,10 +63,17 @@ def buildTweet():
 
 if __name__=='__main__':
 	api = twitterSetup()
-	print(topusers.getTopUser(api))
-#	tweet=buildTweet()
-#	print(tweet)
-#	ans = input("Post this tweet? y/n? ")
-#	if ans=='y':
-#		api.update_status(tweet)
+#	print(topusers.getTopUser(api)) #test
+	tweet=buildTweet()
+	print()
+	print(tweet)
+	print()
+	ans = input("Post this tweet? y/n? ")
+	if ans=='y':
+		api.update_status(tweet)
+
+
+
+
+
  
