@@ -1,4 +1,4 @@
-import tweepy,random,api_keys
+import tweepy,random,api_keys,topusers
 
 def twitterSetup():
 	CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY,ACCESS_SECRET = api_keys.getKeys()
@@ -63,9 +63,10 @@ def buildTweet():
 
 if __name__=='__main__':
 	api = twitterSetup()
-	tweet=buildTweet()
-	print(tweet)
-	ans = input("Post this tweet? y/n? ")
-	if ans=='y':
-		api.update_status(tweet)
+	print(topusers.getTopUser(api))
+#	tweet=buildTweet()
+#	print(tweet)
+#	ans = input("Post this tweet? y/n? ")
+#	if ans=='y':
+#		api.update_status(tweet)
  
