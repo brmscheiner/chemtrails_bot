@@ -1,5 +1,13 @@
 import tweepy,random,api_keys,topusers
 
+
+#		crime   = getRandomLine('crimes.txt')
+#		enemy   = getRandomLine('enemies.txt')
+#		lair    = getRandomLine('lairs.txt')
+#		motive  = getRandomLine('motives.txt')
+#		hashtag = getRandomLine('hashtags.txt')
+
+
 def twitterSetup():
 	CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY,ACCESS_SECRET = api_keys.getKeys()
 	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -11,7 +19,7 @@ def getRandomLine(file):
 	with open(file,'r') as f:
 		lines = list(f.readlines())
 		return random.choice(lines).strip('\n')
-
+		
 def gen0(crime,enemy,lair,motive,hashtag):
 	tweet=(enemy.capitalize()+' living in '+lair.upper()
 			+' '+crime+'! Hurry before they '
@@ -46,13 +54,8 @@ def gen6(crime,enemy,lair,motive,hashtag):
 	tweet = (enemy.capitalize()+' is the antichrist! '
 			 +"Don't let them "+motive+"! "+hashtag)
 	return tweet
-
+	
 def buildTweet():
-	crime   = getRandomLine('crimes.txt')
-	enemy   = getRandomLine('enemies.txt')
-	lair    = getRandomLine('lairs.txt')
-	motive  = getRandomLine('motives.txt')
-	hashtag = getRandomLine('hashtags.txt')
 	numGenerators = 6
 	n = str(random.randint(0,numGenerators))
 	tweet = eval('gen'+n+'(crime,enemy,lair,motive,hashtag)')
